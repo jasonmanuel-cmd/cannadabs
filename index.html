@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CannaDabs 805 | Central Coast Rosin Culture</title>
+<meta name="description" content="CannaDabs 805 — Central Coast solventless rosin appreciation. Terpene culture, lifestyle apparel, and sovereign cannabis education from the 805.">
+<link rel="stylesheet" href="styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "CannaDabs 805",
+  "alternateName": "CannaTrav",
+  "description": "Central Coast cannabis appreciation and lifestyle apparel brand. Solventless rosin culture rooted in the 805.",
+  "url": "https://cannadabs805.com",
+  "logo": "https://cannadabs805.com/logo.png",
+  "sameAs": ["https://instagram.com/cannadabs_805"],
+  "address": {
+    "@type": "PostalAddress",
+    "addressRegion": "CA",
+    "addressCountry": "US"
+  }
+}
+</script>
+</head>
+<body>
+
+<!-- AGE GATE -->
+<div id="agegate" class="agegate active">
+  <div class="ag-inner">
+    <div class="ag-logo">CANNA<span>DABS</span></div>
+    <div class="ag-badge">805 · Central Coast · Est. 2024</div>
+    <h1 class="ag-headline">YOU MUST BE <span>21+</span><br>TO ENTER</h1>
+    <p class="ag-sub">This site contains content intended for adults 21 years of age or older in jurisdictions where cannabis is legal. By entering you confirm you meet the legal age requirement in your jurisdiction.</p>
+    <div class="ag-btns">
+      <button class="ag-yes" onclick="enterSite()">I AM 21 OR OLDER — ENTER</button>
+      <button class="ag-no" onclick="window.location.href='https://google.com'">I AM UNDER 21 — EXIT</button>
+    </div>
+    <p class="ag-legal">All cannabis-related content is strictly for educational and appreciation purposes only. Nothing on this site constitutes an offer for the sale of regulated substances. CannaDabs 805 complies with all applicable laws.</p>
+  </div>
+</div>
+
+<!-- SMOKE INTRO -->
+<div id="intro" class="intro">
+  <div id="logo-wrap" class="logo-wrap">
+    <img id="logo-img" class="logo-img" src="logo.png" alt="CannaDabs 805 Logo">
+    <canvas id="smoke-canvas" class="smoke-canvas"></canvas>
+  </div>
+  <div id="intro-label" class="intro-label">Central Coast · 805 · Solventless</div>
+  <button id="skip-btn" class="skip-btn" onclick="skipIntro()">Skip Intro</button>
+</div>
+
+<!-- MAIN SITE -->
+<div id="site" class="site">
+
+  <!-- TICKER -->
+  <div class="ticker-wrap">
+    <div class="ticker-track" id="ticker">
+      <span class="ticker-item">Gelato 41 <em>—</em> Solventless · Limonene 2.1% · Myrcene 1.8% · Fresh Press</span>
+      <span class="ticker-item">Wedding Cake <em>—</em> THCA 76.4% · Cold Cure · 805 Terroir</span>
+      <span class="ticker-item">Ice Cream Cake <em>—</em> Rosin · Caryophyllene 0.9% · Premium Cut</span>
+      <span class="ticker-item">Papaya Punch <em>—</em> Live Rosin · Terpinolene 1.4% · Central Coast</span>
+      <span class="ticker-item">Zkittlez <em>—</em> Hash Rosin · Linalool 0.7% · Microbatch</span>
+      <span class="ticker-item">Strawberry Gary <em>—</em> Solventless · Small Batch Only · NFS</span>
+      <span class="ticker-item">Gelato 41 <em>—</em> Solventless · Limonene 2.1% · Myrcene 1.8% · Fresh Press</span>
+      <span class="ticker-item">Wedding Cake <em>—</em> THCA 76.4% · Cold Cure · 805 Terroir</span>
+      <span class="ticker-item">Ice Cream Cake <em>—</em> Rosin · Caryophyllene 0.9% · Premium Cut</span>
+      <span class="ticker-item">Papaya Punch <em>—</em> Live Rosin · Terpinolene 1.4% · Central Coast</span>
+      <span class="ticker-item">Zkittlez <em>—</em> Hash Rosin · Linalool 0.7% · Microbatch</span>
+      <span class="ticker-item">Strawberry Gary <em>—</em> Solventless · Small Batch Only · NFS</span>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo">CANNA<span>DABS</span> <small>805</small></div>
+    <ul class="nav-links">
+      <li><a href="#gallery">The Gallery</a></li>
+      <li><a href="#merch">Apparel & Gear</a></li>
+      <li><a href="#culture">The Culture</a></li>
+    </ul>
+    <button class="nav-cta" onclick="document.getElementById('merch').scrollIntoView({behavior:'smooth'})">Shop the Drop</button>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-grid"></div>
+    <div class="hero-eyebrow">Central Coast · 805 · Solventless Appreciation</div>
+    <h1 class="hero-hl">
+      <span class="stroke">CANNA</span><br>
+      <span class="pink">DABS</span><br>
+      <span class="num">805</span>
+    </h1>
+    <p class="hero-sub">Where rosin is religion and the Central Coast terroir speaks in terpenes. Strictly appreciation culture — CannaTrav runs sovereign.</p>
+    <div class="hero-badges">
+      <span class="badge badge-a">Solventless Only</span>
+      <span class="badge badge-p">NFS · Appreciation</span>
+      <span class="badge badge-i">805 · Coastal Grown</span>
+    </div>
+    <div class="drip"></div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery-sec" id="gallery">
+    <div class="gallery-hdr">
+      <div class="sec-label">01 — The Resin Gallery</div>
+      <h2 class="sec-title">THE ROSIN <span class="a">LOOKBOOK</span></h2>
+      <p>Educational showcase. No cart. No checkout. Terpene culture — macro-level documentation of solventless craft rooted in 805 microclimates and ice water extraction methodology.</p>
+      <span class="nfs">NFS — Not For Sale</span>
+    </div>
+    <div class="gallery-grid">
+
+      <div class="strain-card">
+        <div class="sc-tag">Fresh Press · Sativa</div>
+        <div class="sc-name">Gelato 41</div>
+        <div class="terp"><span class="tl">Limonene</span><div class="tbar-wrap"><div class="tbar" style="width:84%"></div></div><span class="tw">2.1%</span></div>
+        <div class="terp"><span class="tl">Myrcene</span><div class="tbar-wrap"><div class="tbar" style="width:72%"></div></div><span class="tw">1.8%</span></div>
+        <div class="terp"><span class="tl">Caryophyllene</span><div class="tbar-wrap"><div class="tbar" style="width:44%"></div></div><span class="tw">1.1%</span></div>
+        <div class="terp"><span class="tl">THCA</span><div class="tbar-wrap"><div class="tbar" style="width:95%;background:var(--pink)"></div></div><span class="tw" style="color:var(--pink)">79.2%</span></div>
+        <div class="proc">
+          <div class="ps"><em>❄</em>Ice Water</div>
+          <div class="ps"><em>◎</em>Freeze Dry</div>
+          <div class="ps"><em>⌧</em>Cold Press</div>
+          <div class="ps"><em>✦</em>Fresh</div>
+        </div>
+      </div>
+
+      <div class="strain-card">
+        <div class="sc-tag">Cold Cure · Hybrid</div>
+        <div class="sc-name">Wedding Cake</div>
+        <div class="terp"><span class="tl">Caryophyllene</span><div class="tbar-wrap"><div class="tbar" style="width:68%"></div></div><span class="tw">1.7%</span></div>
+        <div class="terp"><span class="tl">Limonene</span><div class="tbar-wrap"><div class="tbar" style="width:56%"></div></div><span class="tw">1.4%</span></div>
+        <div class="terp"><span class="tl">Linalool</span><div class="tbar-wrap"><div class="tbar" style="width:32%"></div></div><span class="tw">0.8%</span></div>
+        <div class="terp"><span class="tl">THCA</span><div class="tbar-wrap"><div class="tbar" style="width:91%;background:var(--pink)"></div></div><span class="tw" style="color:var(--pink)">76.4%</span></div>
+        <div class="proc">
+          <div class="ps"><em>❄</em>Ice Water</div>
+          <div class="ps"><em>◎</em>Freeze Dry</div>
+          <div class="ps"><em>⌧</em>Cold Press</div>
+          <div class="ps"><em>↻</em>Cure 14d</div>
+        </div>
+      </div>
+
+      <div class="strain-card">
+        <div class="sc-tag">Live Rosin · Indica</div>
+        <div class="sc-name">Papaya Punch</div>
+        <div class="terp"><span class="tl">Terpinolene</span><div class="tbar-wrap"><div class="tbar" style="width:56%"></div></div><span class="tw">1.4%</span></div>
+        <div class="terp"><span class="tl">Myrcene</span><div class="tbar-wrap"><div class="tbar" style="width:88%"></div></div><span class="tw">2.2%</span></div>
+        <div class="terp"><span class="tl">Pinene</span><div class="tbar-wrap"><div class="tbar" style="width:28%"></div></div><span class="tw">0.7%</span></div>
+        <div class="terp"><span class="tl">THCA</span><div class="tbar-wrap"><div class="tbar" style="width:82%;background:var(--pink)"></div></div><span class="tw" style="color:var(--pink)">74.1%</span></div>
+        <div class="proc">
+          <div class="ps"><em>❄</em>Fresh Frozen</div>
+          <div class="ps"><em>◎</em>Bubble Hash</div>
+          <div class="ps"><em>⌧</em>Low Temp</div>
+          <div class="ps"><em>✦</em>Live</div>
+        </div>
+      </div>
+
+    </div>
+    <div class="sov-note">
+      <strong>Architecture Note:</strong> This gallery is non-transactional by design. JSON-LD schema identifies CannaDabs 805 as a lifestyle &amp; cannabis education brand. Payment processing is ring-fenced to the apparel section below. Merchant accounts remain clean.
+    </div>
+  </section>
+
+  <!-- MERCH -->
+  <section class="merch-sec" id="merch">
+    <div class="sec-label">02 — Apparel & Gear</div>
+    <h2 class="sec-title">DROP <span class="a">SS01</span></h2>
+    <p class="merch-sub-text">Limited-run heavyweight streetwear. Clean payment processing. Each drop is a numbered release — 48 units per run.</p>
+
+    <div class="stat-row">
+      <div class="stat-cell"><div class="sn c-a">SS01</div><div class="sl">Current Drop</div></div>
+      <div class="stat-cell"><div class="sn c-p">48</div><div class="sl">Units Per Run</div></div>
+      <div class="stat-cell"><div class="sn c-i">100%</div><div class="sl">Heavy Cotton</div></div>
+      <div class="stat-cell"><div class="sn c-b">805</div><div class="sl">Origin Code</div></div>
+    </div>
+
+    <div class="merch-grid">
+
+      <div class="mc">
+        <div class="mc-img" style="background:#0E0E0E;">
+          <div class="mc-vis">
+            <b style="color:var(--pink);font-size:44px;">CANNA</b>
+            <b style="color:var(--acid);">DABS</b>
+            <b style="color:var(--muted);font-size:18px;font-family:var(--mono);letter-spacing:0.2em;">805 · CENTRAL COAST</b>
+          </div>
+          <div class="lf">Drop 01</div>
+        </div>
+        <div class="mc-info">
+          <div class="mc-name">Neon Graffiti Tee</div>
+          <div class="mc-sub">Heavyweight 7oz · Void Black · Oversized Fit</div>
+          <div class="mc-row"><span class="mc-price">$54</span><button class="mc-btn">Select Size</button></div>
+        </div>
+      </div>
+
+      <div class="mc">
+        <div class="mc-img" style="background:#0C0C0C;">
+          <div class="mc-vis">
+            <b style="color:var(--ice);font-size:40px;">DABS</b>
+            <b style="color:var(--bone);">CANNATRAV</b>
+            <b style="color:var(--muted);font-size:16px;font-family:var(--mono);letter-spacing:0.2em;">◈ 805 ◈</b>
+          </div>
+          <div class="lf">Drop 01</div>
+        </div>
+        <div class="mc-info">
+          <div class="mc-name">Acid Ice Hoodie</div>
+          <div class="mc-sub">Midweight Fleece · Void Black · Kangaroo Pocket</div>
+          <div class="mc-row"><span class="mc-price">$98</span><button class="mc-btn">Select Size</button></div>
+        </div>
+      </div>
+
+      <div class="mc">
+        <div class="mc-img" style="background:#0D0D0D;">
+          <div class="mc-vis">
+            <b style="color:var(--acid);font-size:52px;">805</b>
+            <b style="color:var(--bone);">CANNADABS</b>
+            <b style="color:var(--pink);font-size:16px;">ROSIN CULTURE</b>
+          </div>
+          <div class="lf">Drop 01</div>
+        </div>
+        <div class="mc-info">
+          <div class="mc-name">805 Origin Hat</div>
+          <div class="mc-sub">6-Panel Structured · Void Black · Embroidered</div>
+          <div class="mc-row"><span class="mc-price">$42</span><button class="mc-btn">Add to Cart</button></div>
+        </div>
+      </div>
+
+      <div class="mc">
+        <div class="mc-img" style="background:#111;">
+          <div class="mc-vis">
+            <b style="color:var(--pink);font-size:34px;">CANNA</b>
+            <b style="color:var(--acid);font-size:34px;">TRAV</b>
+            <b style="color:var(--muted);font-size:14px;font-family:var(--mono);">CENTRAL COAST · 805</b>
+          </div>
+          <div class="lf">Drop 01</div>
+        </div>
+        <div class="mc-info">
+          <div class="mc-name">CannaTrav Logo Tee</div>
+          <div class="mc-sub">Heavyweight 7oz · Charcoal · Regular Fit</div>
+          <div class="mc-row"><span class="mc-price">$54</span><button class="mc-btn">Select Size</button></div>
+        </div>
+      </div>
+
+      <div class="mc">
+        <div class="mc-img" style="background:#0A0A0A;">
+          <div class="mc-vis">
+            <b style="color:var(--ice);font-size:26px;">SIGNATURE</b>
+            <b style="color:var(--acid);font-size:20px;">DAB MAT</b>
+            <b style="color:var(--muted);font-size:13px;font-family:var(--mono);">12" × 8" · SILICONE</b>
+          </div>
+          <div class="lf">Drop 01</div>
+        </div>
+        <div class="mc-info">
+          <div class="mc-name">Dab Mat — Signature</div>
+          <div class="mc-sub">12" × 8" · Silicone · Full Graphic · Non-Slip</div>
+          <div class="mc-row"><span class="mc-price">$34</span><button class="mc-btn">Add to Cart</button></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CULTURE -->
+  <section class="culture-sec" id="culture">
+    <div class="sec-label">03 — The Culture</div>
+    <h2 class="sec-title">COMMUNITY & <span class="a">COMPLIANCE</span></h2>
+    <div class="culture-grid">
+      <div class="cc">
+        <div class="cc-icon" style="color:var(--acid)">◈</div>
+        <div class="cc-title">What is Solventless?</div>
+        <div class="cc-body">Rosin is extracted using only heat and pressure — no butane, propane, or chemical solvents. The result is a pure, terpene-intact concentrate that reflects the exact genetic profile of the plant. Ice water hash takes it further: trichomes separated in ice water, freeze-dried, then pressed.</div>
+      </div>
+      <div class="cc">
+        <div class="cc-icon" style="color:var(--ice)">❄</div>
+        <div class="cc-title">The 805 Terroir</div>
+        <div class="cc-body">Ventura, Santa Barbara, and San Luis Obispo counties form one of California's most distinct cannabis-growing microclimates. Pacific marine influence, diurnal temperature swings, and coastal humidity create terpene expressions that can't be replicated inland. The 805 isn't just an area code — it's a denomination of origin.</div>
+      </div>
+      <div class="cc">
+        <div class="cc-icon" style="color:var(--pink)">⌧</div>
+        <div class="cc-title">Rosin Textures Explained</div>
+        <div class="cc-body">Fresh Press: immediate post-press, fluid consistency, maximum terpene volatility. Cold Cure: sealed and held at low temp, transforms into a saucy stable consistency. Budder: whipped to incorporate air, creating a lighter creamy texture. Each serves a different rig setup and temperature preference.</div>
+      </div>
+      <div class="cc">
+        <div class="cc-icon" style="color:var(--acid)">✦</div>
+        <div class="cc-title">About CannaTrav</div>
+        <div class="cc-body">CannaTrav (@cannadabs_805) is a Central Coast cannabis appreciation platform — documentation of craft cultivation, solventless extraction methodology, and the culture around it. All content is educational. Sovereign infrastructure, not a rented platform. Owned stack, owned brand, owned audience.</div>
+      </div>
+    </div>
+    <div class="age-banner">
+      <div class="age-num">21+</div>
+      <div class="age-text">This site contains content intended for adults 21 years of age or older. By proceeding, you confirm you meet the legal age requirement in your jurisdiction. All cannabis-related content is for educational and appreciation purposes only.</div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div>
+      <div class="fl">CANNA<span>DABS</span> <small>805</small></div>
+      <div class="fl-sub">CannaTrav · Central Coast Appreciation · @cannadabs_805</div>
+    </div>
+    <div class="flinks">
+      <a href="#gallery">The Gallery</a>
+      <a href="#merch">Apparel & Gear</a>
+      <a href="#culture">The Culture</a>
+      <a href="#culture">Age Policy</a>
+      <a href="#">Terms</a>
+    </div>
+    <div class="fcopy">© 2025 CannaTrav / CannaDabs 805. All cannabis content is for educational and appreciation purposes only. Not For Sale. 21+ only. <span class="schema-tag">JSON-LD Active</span> <span class="schema-tag">Merchant-Safe Architecture</span> <span class="schema-tag">Sovereign Stack</span></div>
+  </footer>
+
+</div><!-- /site -->
+
+<script src="main.js"></script>
+</body>
+</html>
