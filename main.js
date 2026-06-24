@@ -14,6 +14,7 @@ function skipIntro() {
   setTimeout(() => {
     intro.style.display = 'none';
     document.getElementById('site').classList.add('active');
+    document.getElementById('jar-layer').style.pointerEvents = 'auto';
   }, 900);
 }
 
@@ -101,6 +102,7 @@ function startIntro() {
     setTimeout(() => {
       intro.style.display = 'none';
       document.getElementById('site').classList.add('active');
+    document.getElementById('jar-layer').style.pointerEvents = 'auto';
     }, 900);
   }, 4800);
 }
@@ -112,6 +114,8 @@ window.addEventListener('DOMContentLoaded', () => {
     document.getElementById('agegate').classList.remove('active');
     startIntro();
   }
+
+  spawnJars('jar-layer');
 
   // Smooth scroll for nav links
   document.querySelectorAll('a[href^="#"]').forEach(a => {

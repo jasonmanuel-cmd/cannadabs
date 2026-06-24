@@ -310,3 +310,11 @@ footer{
   .stat-cell{min-width:50%;}
   footer{padding:32px 20px 20px;}
 }
+
+@keyframes jarFloat {
+  0%   { transform: translateY(0px) rotate(var(--rot)); }
+  25%  { transform: translateY(var(--bob1)) rotate(var(--rot2)); }
+  50%  { transform: translateY(var(--bob2)) rotate(var(--rot)); }
+  75%  { transform: translateY(var(--bob1)) rotate(var(--rot3)); }
+  100% { transform: translateY(0px) rotate(var(--rot)); }
+}
