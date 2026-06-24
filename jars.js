@@ -1,5 +1,5 @@
-// CannaDabs 805 — Floating Jar Background System
-// 24 strains sourced from the actual product stack
+// CannaDabs 805 — Flying Jar System v2
+// Each jar has velocity, drifts across full canvas, wraps edges
 
 const JARS = [
   {name:'Sunday\nPunch',       lid:'#FF6B35',bg:'#1a0a00',txt:'#FFE4B5'},
@@ -28,50 +28,39 @@ const JARS = [
   {name:'Mad\nFruit',          lid:'#FF6E40',bg:'#1a0500',txt:'#FFCCBC'},
 ];
 
+const JAR_W = 80;
+const JAR_H = 74;
+
 function spawnJars(containerId) {
   const scene = document.getElementById(containerId);
   if (!scene) return;
 
-  const W = scene.offsetWidth || window.innerWidth;
-  const H = scene.offsetHeight || 600;
+  // Make sure the container fills the hero
+  scene.style.position = 'absolute';
+  scene.style.inset = '0';
+  scene.style.overflow = 'hidden';
+  scene.style.pointerEvents = 'none';
+
+  const particles = [];
 
   JARS.forEach((j) => {
-    const rot  = (Math.random() * 16 - 8).toFixed(1);
-    const rot2 = (parseFloat(rot) + (Math.random() * 5 - 2.5)).toFixed(1);
-    const rot3 = (parseFloat(rot) - (Math.random() * 5 - 2.5)).toFixed(1);
-    const bob1 = `${(Math.random() * -14 - 4).toFixed(0)}px`;
-    const bob2 = `${(Math.random() * 9 + 2).toFixed(0)}px`;
-    const dur  = (3.6 + Math.random() * 3.8).toFixed(1);
-    const delay= (Math.random() * 5).toFixed(1);
-    const x    = 20 + Math.random() * (W - 130);
-    const y    = 20 + Math.random() * (H - 100);
-    const op   = (0.45 + Math.random() * 0.55).toFixed(2);
-
-    const wrap = document.createElement('div');
-    wrap.className = 'jar-float';
-    wrap.style.cssText = [
-      `position:absolute`,
-      `left:${x}px`,
-      `top:${y}px`,
-      `opacity:${op}`,
-      `cursor:pointer`,
-      `user-select:none`,
-      `--rot:${rot}deg`,
-      `--rot2:${rot2}deg`,
-      `--rot3:${rot3}deg`,
-      `--bob1:${bob1}`,
-      `--bob2:${bob2}`,
-      `animation:jarFloat ${dur}s ease-in-out -${delay}s infinite`,
-      `transition:transform 0.2s ease, opacity 0.2s ease`,
-      `z-index:1`,
-    ].join(';');
-
-    const lines = j.name.split('\n');
+    const lines  = j.name.split('\n');
     const lidTxt = lines[0].length > 8 ? lines[0].substring(0, 8) : lines[0];
     const labelLines = lines.map(l => `<span style="display:block">${l}</span>`).join('');
     const fs = lines.length > 1 ? '9px' : '11px';
 
-    wrap.innerHTML = `
+    const el = document.createElement('div');
+    el.style.cssText = [
+      'position:absolute',
+      'will-change:transform',
+      'pointer-events:auto',
+      'cursor:pointer',
+      'user-select:none',
+      `opacity:${(0.5 + Math.random() * 0.5).toFixed(2)}`,
+      'transition:opacity 0.2s',
+    ].join(';');
+
+    el.innerHTML = `
       <div style="display:flex;flex-direction:column;align-items:center;">
         <div style="
           width:78px;height:14px;
@@ -80,8 +69,9 @@ function spawnJars(containerId) {
           border-bottom:none;
           background:${j.lid};
           display:flex;align-items:center;justify-content:center;
+          flex-shrink:0;
         ">
-          <span style="font-family:'Bebas Neue',sans-serif;font-size:8px;color:#000;letter-spacing:0.1em;opacity:0.85">${lidTxt.toUpperCase()}</span>
+          <span style="font-family:'Bebas Neue',sans-serif;font-size:8px;color:#000;letter-spacing:0.1em;opacity:0.85;white-space:nowrap;overflow:hidden">${lidTxt.toUpperCase()}</span>
         </div>
         <div style="
           width:72px;height:58px;
@@ -90,28 +80,77 @@ function spawnJars(containerId) {
           border-top:none;
           background:${j.bg};
           display:flex;align-items:center;justify-content:center;
-          position:relative;overflow:hidden;
+          position:relative;overflow:hidden;flex-shrink:0;
         ">
           <div style="position:absolute;top:0;left:0;width:28%;height:100%;background:rgba(255,255,255,0.05);pointer-events:none;"></div>
-          <div style="text-align:center;position:relative;z-index:2;">
+          <div style="text-align:center;position:relative;z-index:2;padding:0 4px;">
             <div style="font-family:'Bebas Neue',sans-serif;font-size:${fs};letter-spacing:0.06em;color:${j.txt};line-height:1.1;text-shadow:0 1px 4px rgba(0,0,0,0.9)">${labelLines}</div>
-            <div style="font-family:'Space Mono',monospace;font-size:5.5px;color:rgba(255,255,255,0.45);letter-spacing:0.08em;margin-top:2px">LIVE HASH ROSIN</div>
+            <div style="font-family:'Space Mono',monospace;font-size:5.5px;color:rgba(255,255,255,0.4);letter-spacing:0.06em;margin-top:2px">LIVE HASH ROSIN</div>
           </div>
         </div>
       </div>
     `;
 
-    wrap.addEventListener('mouseenter', () => {
-      wrap.style.transform = 'scale(1.18) rotate(0deg)';
-      wrap.style.opacity   = '1';
-      wrap.style.zIndex    = '20';
+    // Hover
+    el.addEventListener('mouseenter', () => {
+      el.style.opacity = '1';
+      el.style.zIndex  = '50';
     });
-    wrap.addEventListener('mouseleave', () => {
-      wrap.style.transform = '';
-      wrap.style.opacity   = op;
-      wrap.style.zIndex    = '1';
+    el.addEventListener('mouseleave', () => {
+      el.style.opacity = p.opacity;
+      el.style.zIndex  = '1';
     });
 
-    scene.appendChild(wrap);
+    scene.appendChild(el);
+
+    // Physics state — spread jars across entire canvas on init
+    const p = {
+      el,
+      x: Math.random() * (window.innerWidth  - JAR_W),
+      y: Math.random() * (scene.offsetHeight - JAR_H),
+      vx: (Math.random() * 1.4 - 0.7) * (Math.random() > 0.5 ? 1 : -1),
+      vy: (Math.random() * 1.0 - 0.5) * (Math.random() > 0.5 ? 1 : -1),
+      rot: Math.random() * 360,
+      vrot: (Math.random() * 0.6 - 0.3),
+      opacity: (0.5 + Math.random() * 0.5).toFixed(2),
+      pinned: false,
+    };
+
+    // Make sure speed isn't too slow
+    if (Math.abs(p.vx) < 0.25) p.vx = p.vx < 0 ? -0.35 : 0.35;
+    if (Math.abs(p.vy) < 0.15) p.vy = p.vy < 0 ? -0.2  : 0.2;
+
+    particles.push(p);
   });
+
+  // RAF loop
+  let W, H;
+
+  function resize() {
+    W = scene.offsetWidth  || window.innerWidth;
+    H = scene.offsetHeight || 600;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  function tick() {
+    for (const p of particles) {
+      if (p.pinned) continue;
+
+      p.x   += p.vx;
+      p.y   += p.vy;
+      p.rot += p.vrot;
+
+      // Wrap edges — jar exits one side, reappears on the other
+      if (p.x > W + JAR_W)  p.x = -JAR_W;
+      if (p.x < -JAR_W)     p.x =  W + JAR_W;
+      if (p.y > H + JAR_H)  p.y = -JAR_H;
+      if (p.y < -JAR_H)     p.y =  H + JAR_H;
+
+      p.el.style.transform = `translate(${p.x}px, ${p.y}px) rotate(${p.rot}deg)`;
+    }
+    requestAnimationFrame(tick);
+  }
+
+  requestAnimationFrame(tick);
 }
